@@ -1,7 +1,7 @@
 import axios from "axios"
-import { parseChatData, getOptionsFromLivePage } from "./parser"
-import { FetchOptions } from "./types/yt-response"
-import { ChatItem, YoutubeId } from "./types/data"
+import { parseChatData, getOptionsFromLivePage } from "./parser.js"
+import { FetchOptions } from "./types/yt-response.js"
+import { ChatItem, YoutubeId } from "./types/data.js"
 
 axios.defaults.headers.common["Accept-Encoding"] = "utf-8"
 
@@ -20,13 +20,16 @@ export async function fetchChat(options: FetchOptions): Promise<[ChatItem[], str
   return parseChatData(res.data)
 }
 
-export async function fetchLivePage(id: { channelId: string } | { liveId: string } | { handle: string }) {
+export async function fetchLivePage(
+  id: { channelId: string } | { liveId: string } | { handle: string },
+  chatType?: boolean
+) {
   const url = generateLiveUrl(id)
   if (!url) {
     throw TypeError("not found id")
   }
   const res = await axios.get(url)
-  return getOptionsFromLivePage(res.data.toString())
+  return getOptionsFromLivePage(res.data.toString(), chatType)
 }
 
 function generateLiveUrl(id: YoutubeId) {

@@ -1,8 +1,8 @@
-import { EventEmitter } from "events"
+import { EventEmitter } from "node:events"
 import TypedEmitter from "typed-emitter"
-import { ChatItem, YoutubeId } from "./types/data"
-import { FetchOptions } from "./types/yt-response"
-import { fetchChat, fetchLivePage } from "./requests"
+import { ChatItem, YoutubeId } from "./types/data.js"
+import { FetchOptions } from "./types/yt-response.js"
+import { fetchChat, fetchLivePage } from "./requests.js"
 
 type LiveChatEvents = {
   start: (liveId: string) => void
@@ -12,16 +12,17 @@ type LiveChatEvents = {
 }
 
 /**
- * YouTubeライブチャット取得イベント
+ * YouTube live chat acquisition event
  */
 export class LiveChat extends (EventEmitter as new () => TypedEmitter<LiveChatEvents>) {
   liveId?: string
-  #observer?: NodeJS.Timer
+  #observer?: NodeJS.Timeout
   #options?: FetchOptions
   readonly #interval: number = 1000
   readonly #id: YoutubeId
+  readonly #chatType: boolean = false
 
-  constructor(id: YoutubeId, interval = 1000) {
+  constructor(id: YoutubeId, chatType = false, interval = 1000) {
     super()
     if (!id || (!("channelId" in id) && !("liveId" in id) && !("handle" in id))) {
       throw TypeError("Required channelId or liveId or handle.")
@@ -31,14 +32,17 @@ export class LiveChat extends (EventEmitter as new () => TypedEmitter<LiveChatEv
 
     this.#id = id
     this.#interval = interval
+    this.#chatType = chatType
   }
 
   async start(): Promise<boolean> {
-    if (this.#observer) {
-      return false
-    }
     try {
-      const options = await fetchLivePage(this.#id)
+      const options = await fetchLivePage(this.#id, this.#chatType)
+      if (this.#observer && this.liveId == options.liveId) {
+        return false
+      } else if (this.#observer && this.liveId != options.liveId) {
+        this.stop("liveID is changed")
+      }
       this.liveId = options.liveId
       this.#options = options
 
@@ -78,3 +82,4 @@ export class LiveChat extends (EventEmitter as new () => TypedEmitter<LiveChatEv
     }
   }
 }
+

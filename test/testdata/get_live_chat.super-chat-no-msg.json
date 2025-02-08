@@ -1,0 +1,175 @@
+{
+    "responseContext": {
+      "serviceTrackingParams": [
+        {
+          "service": "CSI",
+          "params": [
+            {
+              "key": "c",
+              "value": "WEB"
+            },
+            {
+              "key": "cver",
+              "value": "2.20211119.09.00"
+            },
+            {
+              "key": "yt_li",
+              "value": "0"
+            },
+            {
+              "key": "GetLiveChat_rid",
+              "value": "0x05d2923065b2295c"
+            }
+          ]
+        },
+        {
+          "service": "GFEEDBACK",
+          "params": [
+            {
+              "key": "logged_in",
+              "value": "0"
+            },
+            {
+              "key": "e",
+              "value": "24115586,24034168,24137390,24106921,24132435,24129452,24113096,24002025,39321281,24027701,24135287,23983296,24131029,23857950,24118516,24007790,23934970,23744176,24113224,24016904,24080738,24134829,23918597,24049820,24002022,24113538,24028143,24115508,24132376,24084440,24095695,23968386,24131277,24036948,24064555,23986025,24109689,24001373,24077241,24004644,24116916,39321426,24116772,24116735,24007246,24129402,24129776,24136255,23944779,24058380,23998056,24128612,24082661,23882502,23804281,24113699,24130238,23885487,24085811,24077266,23946420,24106407,24110902,24106839,1714247,24116717,24111165,24106628,24114970,24126458,23884386,23966208"
+            }
+          ]
+        },
+        {
+          "service": "GUIDED_HELP",
+          "params": [
+            {
+              "key": "logged_in",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "service": "ECATCHER",
+          "params": [
+            {
+              "key": "client.version",
+              "value": "2.20211119"
+            },
+            {
+              "key": "client.name",
+              "value": "WEB"
+            },
+            {
+              "key": "client.fexp",
+              "value": "24115586,24034168,24137390,24106921,24132435,24129452,24113096,24002025,39321281,24027701,24135287,23983296,24131029,23857950,24118516,24007790,23934970,23744176,24113224,24016904,24080738,24134829,23918597,24049820,24002022,24113538,24028143,24115508,24132376,24084440,24095695,23968386,24131277,24036948,24064555,23986025,24109689,24001373,24077241,24004644,24116916,39321426,24116772,24116735,24007246,24129402,24129776,24136255,23944779,24058380,23998056,24128612,24082661,23882502,23804281,24113699,24130238,23885487,24085811,24077266,23946420,24106407,24110902,24106839,1714247,24116717,24111165,24106628,24114970,24126458,23884386,23966208"
+            }
+          ]
+        }
+      ],
+      "mainAppWebResponseContext": {
+        "loggedOut": true
+      },
+      "webResponseContextExtensionData": {
+        "hasDecorated": true
+      }
+    },
+    "continuationContents": {
+      "liveChatContinuation": {
+        "continuations": [
+          {
+            "invalidationContinuationData": {
+              "invalidationId": {
+                "objectSource": 1056,
+                "objectId": "",
+                "topic": "",
+                "subscribeToGcmTopics": true,
+                "protoCreationTimestampMs": "1637648016661"
+              },
+              "timeoutMs": 10000,
+              "continuation": "test-continuation:01"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "addChatItemAction": {
+              "item": {
+                "liveChatPaidMessageRenderer": {
+                  "id": "id",
+                  "timestampUsec": "1609459200000000",
+                  "authorName": {
+                    "simpleText": "authorName"
+                  },
+                  "authorPhoto": {
+                    "thumbnails": [
+                      {
+                        "url": "https://author.thumbnail.url",
+                        "width": 32,
+                        "height": 32
+                      },
+                      {
+                        "url": "https://author.thumbnail.url",
+                        "width": 64,
+                        "height": 64
+                      }
+                    ]
+                  },
+                  "purchaseAmountText": {
+                    "simpleText": "¥320"
+                  },
+                  "headerBackgroundColor": 4278237396,
+                  "headerTextColor": 4278190080,
+                  "bodyBackgroundColor": 4278248959,
+                  "bodyTextColor": 4278190080,
+                  "authorExternalChannelId": "channelId",
+                  "authorNameTextColor": 3003121664,
+                  "contextMenuEndpoint": {
+                    "clickTrackingParams": "contextMenuEndpoint.clickTrackingParams",
+                    "commandMetadata": {
+                      "webCommandMetadata": {
+                        "ignoreNavigation": true
+                      }
+                    },
+                    "liveChatItemContextMenuEndpoint": {
+                      "params": "contextMenuEndpoint.liveChatItemContextMenuEndpoint.params"
+                    }
+                  },
+                  "timestampColor": 2147483648,
+                  "contextMenuAccessibility": {
+                    "accessibilityData": {
+                      "label": "Chat actions"
+                    }
+                  },
+                  "trackingParams": "trackingParams",
+                  "authorBadges": [
+                    {
+                      "liveChatAuthorBadgeRenderer": {
+                        "customThumbnail": {
+                          "thumbnails": [
+                            {
+                              "url": "https://author.thumbnail.url",
+                              "width": 16,
+                              "height": 16
+                            },
+                            {
+                              "url": "https://author.thumbnail.url",
+                              "width": 32,
+                              "height": 32
+                            }
+                          ]
+                        },
+                        "tooltip": "Member (2 years)",
+                        "accessibility": {
+                          "accessibilityData": {
+                            "label": "Member (2 years)"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "textInputBackgroundColor": 822083583
+                }
+              },
+              "clientId": ""
+            }
+          }
+        ]
+      }
+    }
+  }

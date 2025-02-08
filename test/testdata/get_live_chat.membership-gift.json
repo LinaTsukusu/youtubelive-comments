@@ -1,0 +1,168 @@
+{
+    "responseContext": {
+      "serviceTrackingParams": [
+        {
+          "service": "CSI",
+          "params": [
+            {
+              "key": "c",
+              "value": "WEB"
+            },
+            {
+              "key": "cver",
+              "value": "2.20211119.09.00"
+            },
+            {
+              "key": "yt_li",
+              "value": "0"
+            },
+            {
+              "key": "GetLiveChat_rid",
+              "value": "0x05d2923065b2295c"
+            }
+          ]
+        },
+        {
+          "service": "GFEEDBACK",
+          "params": [
+            {
+              "key": "logged_in",
+              "value": "0"
+            },
+            {
+              "key": "e",
+              "value": "24115586,24034168,24137390,24106921,24132435,24129452,24113096,24002025,39321281,24027701,24135287,23983296,24131029,23857950,24118516,24007790,23934970,23744176,24113224,24016904,24080738,24134829,23918597,24049820,24002022,24113538,24028143,24115508,24132376,24084440,24095695,23968386,24131277,24036948,24064555,23986025,24109689,24001373,24077241,24004644,24116916,39321426,24116772,24116735,24007246,24129402,24129776,24136255,23944779,24058380,23998056,24128612,24082661,23882502,23804281,24113699,24130238,23885487,24085811,24077266,23946420,24106407,24110902,24106839,1714247,24116717,24111165,24106628,24114970,24126458,23884386,23966208"
+            }
+          ]
+        },
+        {
+          "service": "GUIDED_HELP",
+          "params": [
+            {
+              "key": "logged_in",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "service": "ECATCHER",
+          "params": [
+            {
+              "key": "client.version",
+              "value": "2.20211119"
+            },
+            {
+              "key": "client.name",
+              "value": "WEB"
+            },
+            {
+              "key": "client.fexp",
+              "value": "24115586,24034168,24137390,24106921,24132435,24129452,24113096,24002025,39321281,24027701,24135287,23983296,24131029,23857950,24118516,24007790,23934970,23744176,24113224,24016904,24080738,24134829,23918597,24049820,24002022,24113538,24028143,24115508,24132376,24084440,24095695,23968386,24131277,24036948,24064555,23986025,24109689,24001373,24077241,24004644,24116916,39321426,24116772,24116735,24007246,24129402,24129776,24136255,23944779,24058380,23998056,24128612,24082661,23882502,23804281,24113699,24130238,23885487,24085811,24077266,23946420,24106407,24110902,24106839,1714247,24116717,24111165,24106628,24114970,24126458,23884386,23966208"
+            }
+          ]
+        }
+      ],
+      "mainAppWebResponseContext": {
+        "loggedOut": true
+      },
+      "webResponseContextExtensionData": {
+        "hasDecorated": true
+      }
+    },
+    "continuationContents": {
+      "liveChatContinuation": {
+        "continuations": [
+          {
+            "invalidationContinuationData": {
+              "invalidationId": {
+                "objectSource": 1056,
+                "objectId": "objectId",
+                "topic": "topic",
+                "subscribeToGcmTopics": true,
+                "protoCreationTimestampMs": "1637648016661"
+              },
+              "timeoutMs": 10000,
+              "continuation": "test-continuation:01"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "addChatItemAction": {
+              "item": {
+                "liveChatSponsorshipsGiftPurchaseAnnouncementRenderer": {
+                  "id": "id",
+                  "timestampUsec": "1609459200000000",
+                  "authorExternalChannelId": "channelId",
+                  "header": {
+                    "liveChatSponsorshipsHeaderRenderer": {
+                      "authorName": {
+                        "simpleText": "authorName"
+                      },
+                      "authorPhoto": {
+                        "thumbnails": [
+                          {
+                            "url": "https://author.thumbnail.url",
+                            "width": 32,
+                            "height": 32
+                          },
+                          {
+                            "url": "https://author.thumbnail.url",
+                            "width": 64,
+                            "height": 64
+                          }
+                        ]
+                      },
+                      "primaryText": {
+                        "runs": [
+                          {
+                            "text": "10",
+                            "bold": true
+                          },
+                          {
+                            "text": " 件の ",
+                            "bold": true
+                          },
+                          {
+                            "text": "上級エンジニア",
+                            "bold": true
+                          },
+                          {
+                            "text": " のメンバーシップ ギフトを贈りました",
+                            "bold": true
+                          }
+                        ]
+                      },
+                      "contextMenuEndpoint": {
+                        "clickTrackingParams": "CAEQl98BIhMI07io_reR-AIV1LRWAR1kDQ1K",
+                        "commandMetadata": {
+                          "webCommandMetadata": {
+                            "ignoreNavigation": true
+                          }
+                        },
+                        "liveChatItemContextMenuEndpoint": {
+                          "params": "Q2g0S0hBb2FRMDV4Y1ROMllUTnJabWREUmxKTlQyWlJiMlJMU1hkSmQzY2FLU29uQ2hoVlEyUjVjVUZoV2tSTFNGaG5ORUZvYVRkV1JVNVVhRkVTQzI0NGNWSndhVlpYWDJGRklBRW9CRElhQ2hoVlF6TnJYMjFHZURkRGVsOWhhRXM0Y0RSVWNsbzVTMUU0QWtnQVVDUSUzRA=="
+                        }
+                      },
+                      "contextMenuAccessibility": {
+                        "accessibilityData": {
+                          "label": "チャットの操作"
+                        }
+                      },
+                      "image": {
+                        "thumbnails": [
+                          {
+                            "url": "https://www.gstatic.com/youtube/img/sponsorships/sponsorships_gift_purchase_announcement_artwork.png"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }

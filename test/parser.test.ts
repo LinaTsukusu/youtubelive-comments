@@ -236,6 +236,35 @@ describe("Parser", () => {
       ])
     })
 
+    test("Super Chat (No message)", () => {
+      const res = JSON.parse(readFileSync(__dirname + "/testdata/get_live_chat.super-chat-no-msg.json").toString())
+      const [chatItems, continuation] = parseChatData(res)
+      expect(continuation).toBe("test-continuation:01")
+      expect(chatItems).toMatchObject([
+        {
+          id: "id",
+          author: {
+            name: "authorName",
+            thumbnail: {
+              url: "https://author.thumbnail.url",
+              alt: "authorName",
+            },
+            channelId: "channelId",
+          },
+          message: [],
+          superchat: {
+            amount: "¥320",
+            color: "#00E5FF",
+          },
+          isMembership: true,
+          isVerified: false,
+          isOwner: false,
+          isModerator: false,
+          timestamp: new Date("2021-01-01"),
+        },
+      ])
+    })
+
     test("Super Sticker", () => {
       const res = JSON.parse(readFileSync(__dirname + "/testdata/get_live_chat.super-sticker.json").toString())
       const [chatItems, continuation] = parseChatData(res)
@@ -258,6 +287,42 @@ describe("Parser", () => {
             sticker: {
               url: "//super.sticker.url",
               alt: "superSticker",
+            },
+          },
+          isMembership: false,
+          isVerified: false,
+          isOwner: false,
+          isModerator: false,
+          timestamp: new Date("2021-01-01"),
+        },
+      ])
+    })
+
+    test("Membership Gift", () => {
+      const res = JSON.parse(readFileSync(__dirname + "/testdata/get_live_chat.membership-gift.json").toString())
+      const [chatItems, continuation] = parseChatData(res)
+      expect(continuation).toBe("test-continuation:01")
+      expect(chatItems).toMatchObject([
+        {
+          author: {
+            name: "authorName",
+            thumbnail: {
+              url: "https://author.thumbnail.url",
+              alt: "authorName",
+            },
+            channelId: "channelId",
+          },
+          message: [],
+          membershipGift: {
+            message: [
+              { text: "10" },
+              { text: " 件の " },
+              { text: "上級エンジニア" },
+              { text: " のメンバーシップ ギフトを贈りました" },
+            ],
+            image: {
+              url: "https://www.gstatic.com/youtube/img/sponsorships/sponsorships_gift_purchase_announcement_artwork.png",
+              alt: "",
             },
           },
           isMembership: false,

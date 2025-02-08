@@ -1,4 +1,4 @@
-/** APIレスポンスの型 */
+/** API response type */
 
 /** get_live_chat Response */
 export interface GetLiveChatResponse {
@@ -34,6 +34,8 @@ export interface Continuation {
 export interface Action {
   addChatItemAction?: AddChatItemAction
   addLiveChatTickerItemAction?: object
+  removeChatItemAction?: RemoveChatItemAction
+  removeChatItemByAuthorAction?: TimeoutChatItemAction
 }
 
 export interface Thumbnail {
@@ -148,6 +150,9 @@ export interface LiveChatPaidStickerRenderer extends MessageRendererBase {
   stickerDisplayHeight: number
   backgroundColor: number
   authorNameTextColor: number
+  headerPrimaryText: {
+    runs: MessageRun[]
+  }
 }
 
 export interface LiveChatMembershipItemRenderer extends MessageRendererBase {
@@ -157,15 +162,83 @@ export interface LiveChatMembershipItemRenderer extends MessageRendererBase {
   authorBadges: AuthorBadge[]
 }
 
+export interface LiveChatMembershipMilestoneRenderer extends MessageRendererBase {
+  headerPrimaryText: {
+    runs: MessageRun[]
+  }
+  empty: boolean
+  authorBadges: AuthorBadge[]
+}
+
+export interface LiveChatSponsorshipsGiftPurchaseAnnouncementRenderer {
+  id: string
+  timestampUsec: string
+  authorExternalChannelId: string
+  header: {
+    liveChatSponsorshipsHeaderRenderer: LiveChatSponsorshipsHeaderRenderer
+  }
+}
+
+export interface liveChatSponsorshipsGiftRedemptionAnnouncementRenderer extends MessageRendererBase {
+  message: {
+    runs: MessageRun[]
+  }
+}
+
+export interface LiveChatSponsorshipsHeaderRenderer {
+  primaryText: {
+    runs: MessageRun[]
+  }
+  image?: {
+    thumbnails?: { url: string }[]
+  }
+  authorName?: {
+    simpleText: string
+  }
+  authorPhoto: {
+    thumbnails: Thumbnail[]
+  }
+  authorBadges?: AuthorBadge[]
+  contextMenuEndpoint: {
+    clickTrackingParams: string
+    commandMetadata: {
+      webCommandMetadata: {
+        ignoreNavigation: true
+      }
+    }
+    liveChatItemContextMenuEndpoint: {
+      params: string
+    }
+  }
+  contextMenuAccessibility: {
+    accessibilityData: {
+      label: string
+    }
+  }
+}
+
 export interface AddChatItemAction {
   item: {
     liveChatTextMessageRenderer?: LiveChatTextMessageRenderer
     liveChatPaidMessageRenderer?: LiveChatPaidMessageRenderer
     liveChatMembershipItemRenderer?: LiveChatMembershipItemRenderer
     liveChatPaidStickerRenderer?: LiveChatPaidStickerRenderer
+    liveChatSponsorshipsGiftPurchaseAnnouncementRenderer?: LiveChatSponsorshipsGiftPurchaseAnnouncementRenderer
+    liveChatSponsorshipsGiftRedemptionAnnouncementRenderer?: liveChatSponsorshipsGiftRedemptionAnnouncementRenderer
+    LiveChatMembershipMilestoneRenderer?: LiveChatMembershipMilestoneRenderer
     liveChatViewerEngagementMessageRenderer?: object
   }
   clientId: string
+}
+
+export interface RemoveChatItemAction {
+  type: "REMOVE"
+  targetItemId: string
+}
+
+export interface TimeoutChatItemAction {
+  type: "TIMEOUT"
+  externalChannelId: string
 }
 
 /** Options for get_live_chat */
